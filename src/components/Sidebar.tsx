@@ -2,6 +2,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import {
   BarChart3,
   LineChart,
@@ -43,23 +44,32 @@ export function Sidebar({ className }: SidebarProps) {
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <Home className="h-4 w-4" />
-              Dashboard
+              <Link to="/">
+                <Home className="h-4 w-4" />
+                Dashboard
+              </Link>
             </Button>
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <TrendingUp className="h-4 w-4" />
-              Insights
+              <Link to="/insights">
+                <TrendingUp className="h-4 w-4" />
+                Insights
+              </Link>
             </Button>
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <FileText className="h-4 w-4" />
-              Reports
+              <Link to="/reports">
+                <FileText className="h-4 w-4" />
+                Reports
+              </Link>
             </Button>
           </div>
         </div>
@@ -71,23 +81,32 @@ export function Sidebar({ className }: SidebarProps) {
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <BarChart3 className="h-4 w-4" />
-              Performance
+              <Link to="/performance">
+                <BarChart3 className="h-4 w-4" />
+                Performance
+              </Link>
             </Button>
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <LineChart className="h-4 w-4" />
-              Trends
+              <Link to="/trends">
+                <LineChart className="h-4 w-4" />
+                Trends
+              </Link>
             </Button>
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <PieChart className="h-4 w-4" />
-              Distribution
+              <Link to="/distribution">
+                <PieChart className="h-4 w-4" />
+                Distribution
+              </Link>
             </Button>
           </div>
         </div>
@@ -99,16 +118,22 @@ export function Sidebar({ className }: SidebarProps) {
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <AreaChart className="h-4 w-4" />
-              Forecast
+              <Link to="/forecast">
+                <AreaChart className="h-4 w-4" />
+                Forecast
+              </Link>
             </Button>
             <Button
               variant="ghost"
               className="w-full justify-start text-sidebar-foreground gap-2"
+              asChild
             >
-              <Database className="h-4 w-4" />
-              Data Models
+              <Link to="/data-models">
+                <Database className="h-4 w-4" />
+                Data Models
+              </Link>
             </Button>
           </div>
         </div>
@@ -117,9 +142,12 @@ export function Sidebar({ className }: SidebarProps) {
         <Button
           variant="ghost"
           className="w-full justify-start gap-2 text-sidebar-foreground"
+          asChild
         >
-          <Settings className="h-4 w-4" />
-          Settings
+          <Link to="/settings">
+            <Settings className="h-4 w-4" />
+            Settings
+          </Link>
         </Button>
       </div>
     </div>
