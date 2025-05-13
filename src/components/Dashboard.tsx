@@ -2,64 +2,67 @@
 import React from "react";
 import { MetricCard } from "./MetricCard";
 import { DataVisualizer } from "./DataVisualizer";
-import { PredictionForm } from "./PredictionForm";
+import { CourseEvaluationForm } from "./CourseEvaluationForm";
+import { CourseTable } from "./CourseTable";
 
 export function Dashboard() {
   return (
     <div className="flex-1 p-6 overflow-auto animate-fade-in">
       <div className="flex flex-col gap-6">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Đánh giá khóa học</h1>
           <p className="text-muted-foreground">
-            Welcome to your analytics and prediction dashboard
+            Hệ thống đánh giá và phân tích chất lượng khóa học
           </p>
         </div>
 
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 animate-slide-up">
           <MetricCard 
-            title="Total Revenue" 
-            value="$24,563" 
-            change="12%" 
+            title="Điểm đánh giá trung bình" 
+            value="4.2/5" 
+            change="0.3" 
             isPositive={true}
-            description="Compared to previous period" 
+            description="So với kỳ trước" 
           />
           <MetricCard 
-            title="Conversion Rate" 
-            value="3.6%" 
-            change="0.8%" 
+            title="Tỷ lệ hoàn thành" 
+            value="78%" 
+            change="5%" 
             isPositive={true}
-            description="Compared to previous period" 
+            description="So với kỳ trước" 
           />
           <MetricCard 
-            title="Average Order Value" 
-            value="$59.82" 
-            change="2.4%" 
+            title="Mức độ tương tác" 
+            value="65%" 
+            change="8%" 
             isPositive={true}
-            description="Compared to previous period" 
+            description="So với kỳ trước" 
           />
           <MetricCard 
-            title="Churn Rate" 
-            value="2.3%" 
-            change="0.5%" 
+            title="Tỷ lệ bỏ học" 
+            value="12%" 
+            change="3%" 
             isPositive={false}
-            description="Compared to previous period" 
+            description="So với kỳ trước" 
           />
         </div>
 
         <DataVisualizer />
+        
+        <CourseTable />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
-            <h2 className="text-xl font-semibold mb-4">Key Insights</h2>
+            <h2 className="text-xl font-semibold mb-4">Đánh giá chi tiết</h2>
             <div className="bg-card border rounded-lg p-4 space-y-4">
               <div className="flex items-start gap-4">
                 <div className="w-8 h-8 rounded-full bg-insight-100 flex items-center justify-center text-insight-600">
                   1
                 </div>
                 <div>
-                  <h3 className="font-medium">Revenue Growth Trend</h3>
+                  <h3 className="font-medium">Nội dung khóa học</h3>
                   <p className="text-sm text-muted-foreground">
-                    Revenue has increased by 12% compared to the previous period, with the most significant growth in the premium subscription tier.
+                    Nội dung khóa học được đánh giá cao về tính cập nhật và phù hợp với nhu cầu thực tế của học viên, tăng 12% so với kỳ đánh giá trước.
                   </p>
                 </div>
               </div>
@@ -69,9 +72,9 @@ export function Dashboard() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-medium">Customer Acquisition</h3>
+                  <h3 className="font-medium">Phương pháp giảng dạy</h3>
                   <p className="text-sm text-muted-foreground">
-                    New customer acquisition cost has decreased by 8%, while the retention rate has improved to 85% from 78% last quarter.
+                    Phương pháp giảng dạy được học viên đánh giá tích cực với 85% phản hồi cho rằng giảng viên truyền đạt rõ ràng và dễ hiểu.
                   </p>
                 </div>
               </div>
@@ -81,9 +84,9 @@ export function Dashboard() {
                   3
                 </div>
                 <div>
-                  <h3 className="font-medium">Market Expansion Opportunity</h3>
+                  <h3 className="font-medium">Cơ sở vật chất và trang thiết bị</h3>
                   <p className="text-sm text-muted-foreground">
-                    Data suggests potential for 15-20% growth if services are expanded to the European market in the next quarter.
+                    Cần cải thiện về cơ sở vật chất, đặc biệt là phòng thực hành và thiết bị hỗ trợ giảng dạy, 65% học viên đề xuất nâng cấp.
                   </p>
                 </div>
               </div>
@@ -91,7 +94,7 @@ export function Dashboard() {
           </div>
           
           <div className="lg:col-span-1">
-            <PredictionForm />
+            <CourseEvaluationForm />
           </div>
         </div>
       </div>
